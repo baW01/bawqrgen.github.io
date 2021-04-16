@@ -1,37 +1,57 @@
-## Welcome to GitHub Pages
+<html>
 
-You can use the [editor on GitHub](https://github.com/baWxSteam/bawqrgen.github.io/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+<head>
+   <style>
+   body{
+    background-image: linear-gradient(#002658, #200047);
+}
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+#main_content{
+    font-size: 32px;
+    color: antiquewhite;
+    padding-left: 5%;
+    
+}
+#image{
+    width: 600px;
+    height: 600px;
+    margin: auto;
+    margin-right: 20rem;
+    margin-top: 3rem;
+    
+    
+}
 
-### Markdown
+   </style>
+    <title>Najs QR Generator</title>
+  <script>
+    function myFunction() {
+        var first = "203401=1484";
+        var last = 101000000000000100;
+        var hour = new Date().getHours();
+        var minutes = new Date().getMinutes();
+        var seconds = new Date().getSeconds();
+        if(hour<10){
+          hour = "0"+hour;
+        }
+        if(minutes<10){
+          minutes = "0"+minutes;
+        }
+        if(seconds<10){
+          seconds = "0"+seconds;
+        }
+        var fullcode = first+hour+minutes+seconds+last;
+      document.getElementById("main_content").innerHTML = fullcode;
+      var imgSrc = "https://quickchart.io/qr?text="+fullcode+"&ecLevel=L&size=800";
+      document.querySelector(".qr_image").src = imgSrc;
+    }
+  </script>
+</head>
+<body onload="myFunction()">
+<div id="main_content"></div>
+<div id="image">
+<img class="qr_image" src="" alt="qr_image">
+</div>
+</body>
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/baWxSteam/bawqrgen.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+</html>
